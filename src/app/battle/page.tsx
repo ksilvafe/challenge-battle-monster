@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"
@@ -26,7 +26,7 @@ type BattleLog = {
   remainingHp: number
 }
 
-export default function Battle() {
+function Battle() {
   const [playerMonster, setPlayerMonster] = useState<Monster | null>(null)
   const [computerMonster, setComputerMonster] = useState<Monster | null>(null)
   const [battleLogs, setBattleLogs] = useState<BattleLog[]>([])
@@ -143,6 +143,14 @@ export default function Battle() {
         Iniciar Nova Batalha
       </Button>
     </div>
+  )
+}
+
+export default function BattleContent() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <Battle />
+    </Suspense>
   )
 }
 
