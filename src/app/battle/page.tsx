@@ -63,9 +63,11 @@ function Battle() {
   }
 
   const startBattle = (player: Monster, computer: Monster) => {
-    let currentPlayer = { ...player }
-    let currentComputer = { ...computer }
+    const currentPlayer = { ...player }
+    const currentComputer = { ...computer }
+    let isPlayerTurn = true; 
     const logs: BattleLog[] = []
+    
 
     while (currentPlayer.hp > 0 && currentComputer.hp > 0) {
       let attacker: Monster
@@ -73,9 +75,11 @@ function Battle() {
 
       if (currentPlayer.speed > currentComputer.speed || 
          (currentPlayer.speed === currentComputer.speed && currentPlayer.attack >= currentComputer.attack)) {
+        isPlayerTurn = true
         attacker = currentPlayer
         defender = currentComputer
       } else {
+        isPlayerTurn = false
         attacker = currentComputer
         defender = currentPlayer
       }
@@ -97,12 +101,12 @@ function Battle() {
         break;
       }
       
-      [currentPlayer, currentComputer] = [currentComputer, currentPlayer]
+      isPlayerTurn = !isPlayerTurn
     }
 
     setBattleLogs(logs)
-    setPlayerMonster({ ...player, hp: currentPlayer.hp })
-    setComputerMonster({ ...computer, hp: currentComputer.hp })
+    setPlayerMonster((prev) => prev ? { ...prev, hp: currentPlayer.hp } : null)
+    setComputerMonster((prev) => prev ? { ...prev, hp: currentComputer.hp } : null)
   }
 
   if (!playerMonster || !computerMonster) {
