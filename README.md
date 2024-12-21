@@ -12,6 +12,15 @@ Com o repositório clonado e as dependências globais instaladas, você pode ins
 ```
 npm install
 ```
+
+### Observação
+
+Caso esteja tenha algum problema ao instalar as  dependências locais, usar o comando:
+
+```
+npm install --force
+```
+
 ### Rodar o projeto
 Para rodar o projeto localmente, basta executar o comando abaixo:
 
