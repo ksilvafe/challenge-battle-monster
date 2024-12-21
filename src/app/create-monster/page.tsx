@@ -59,22 +59,22 @@ export default function CreateMonster() {
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
             </div>
             <div>
-              <Label htmlFor="attack">Ataque</Label>
+              <Label htmlFor="attack">Pontuação de Ataque</Label>
               <Input id="attack" type="number" {...register("attack", { required: "Ataque é obrigatório", min: 1 })} />
               {errors.attack && <p className="text-red-500 text-sm mt-1">{errors.attack.message}</p>}
             </div>
             <div>
-              <Label htmlFor="defense">Defesa</Label>
+              <Label htmlFor="defense">Pontuação de Defesa</Label>
               <Input id="defense" type="number" {...register("defense", { required: "Defesa é obrigatório", min: 1 })} />
               {errors.defense && <p className="text-red-500 text-sm mt-1">{errors.defense.message}</p>}
             </div>
             <div>
-              <Label htmlFor="speed">Velocidade</Label>
+              <Label htmlFor="speed">Pontuação de Velocidade</Label>
               <Input id="speed" type="number" {...register("speed", { required: "Velocidade é obrigatório", min: 1 })} />
               {errors.speed && <p className="text-red-500 text-sm mt-1">{errors.speed.message}</p>}
             </div>
             <div>
-              <Label htmlFor="hp">Vida</Label>
+              <Label htmlFor="hp">Pontuação de Vida</Label>
               <Input id="hp" type="number" {...register("hp", { required: "Vida é obrigatório", min: 1 })} />
               {errors.hp && <p className="text-red-500 text-sm mt-1">{errors.hp.message}</p>}
             </div>
