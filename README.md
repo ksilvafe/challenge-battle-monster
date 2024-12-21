@@ -37,3 +37,8 @@ http://localhost:3000/
 Observações:
 
 - Para derrubar todos os serviços, basta utilizar as teclas CTRL+C, que é o padrão dos terminais para matar processos.
+
+
+### Para acessar a aplição em seu navegador: 
+
+https://challenge-battle-monster-b187.vercel.app/
