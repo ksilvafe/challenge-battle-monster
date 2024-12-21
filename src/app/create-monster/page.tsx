@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { RefreshCw } from 'lucide-react'
+import Image from 'next/image'
 
 type MonsterFormData = {
   name: string
@@ -93,7 +94,13 @@ export default function CreateMonster() {
             </div>
             {previewImage && (
               <div className="mt-4">
-                <img src={previewImage} alt="Preview do monstro" className="w-full h-48 object-cover rounded-md" />
+                <Image 
+                src={previewImage} 
+                alt="Preview do monstro" 
+                className="w-full h-48 object-cover rounded-md"
+                layout="responsive"
+                width={200}
+                height={200} />
               </div>
             )}
           </form>
